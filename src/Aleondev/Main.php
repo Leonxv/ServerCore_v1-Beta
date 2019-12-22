@@ -17,8 +17,7 @@
     public $config;
 
    public function onEnable() {
-       $this->getLogger->info(TF::Green . "Das core plugin wurde erfolgreich geladen!");
-       $this->getServer()->getPluginManager()->registerEvents($this, $this);
+       $this->getLogger()->info(TF::GREEN . "Das core plugin wurde erfolgreich geladen!");
        $this->saveResource("core.yml");
        $this->config = new Config($this->getDataFolder() . "core.yml", Config::YAML);
    }
@@ -31,7 +30,7 @@
                    $this->getServer()->getPluginManager()->getPlugin("EconomyAPI")->addMoney($player, $zahl);
                    $player->sendMessage("§eCore §b$sender §4hat ein Money Drop gemacht!.");
                }
-               $sender->sendMessgae("§eCore §b$player §4du hast nun §b$zahl §4an jeden gepayt");
+               $sender->sendMessage("§eCore §b$player §4du hast nun §b$zahl §4an jeden gepayt");
            } else {
                $sender->sendMessage("§eCore §4Du hast keine Rechte um diesen befehl zu benutzen");
            }
