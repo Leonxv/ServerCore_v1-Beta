@@ -61,16 +61,16 @@ class Main extends PluginBase {
 
         if(strtolower($cmd->getName()) == "fly") {
             if($sender instanceof Player) {
-                if($this->isPlayer($sender)) {
+                if($this->isPlayer($sender)) { // TODO: make function
                     if ($sender->hasPermission("fly.core")) {
-                        $this->removePlayer($sender);
+                        $this->removePlayer($sender); // TODO: make function
                         $sender->setAllowFlight(false);
                         $sender->sendMessage("§eCore §b >> §4Fly ist §cDisable");
                         $sender->addTitle("§eCore\n§cFly Ist Disable\n§eCore §aBy Aleondev");
                         return true;
                     }
                     else{
-                        $this->addPlayer($sender);
+                        $this->addPlayer($sender); // TODO: make function
                         $sender->setAllowFlight(true);
                         $sender->sendMessage("§eCore §b >> §4Fly Ist §aEnable");
                         $sender->addTitle("§eCore\n§4Fly Ist §aEnable\n§eCore §aBy Aleondev");
