@@ -13,7 +13,6 @@ use pocketmine\utils\TextFormat as TF;
 
 class Main extends PluginBase {
 
-
     public $config;
 
     public function onEnable() {
