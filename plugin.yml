@@ -5,7 +5,9 @@ api:
 - 3.0.0
 - 4.0.0
 load: POSTWORLD
-author: Aleondev
+author:
+- Aleondev
+- jasonwynn10
 description: "Core by Aleondev"
 
 commands:
