@@ -4,18 +4,10 @@
 
  use pocketmine\utils\TextFormat as TF;
  use pocketmine\plugin\PluginBase;
- use pocketmine\plugin\Plugin;
  use pocketmine\command\Command;
  use pocketmine\command\CommandSender;
- use pocketmine\command\ConsoleCommandSender; 
  use pocketmine\Player;
- use pocketmine\Server;
  use pocketmine\utils\Config;
- use jojoe77777\FormAPI;
- use DateTime;
- use pocketmine\level\particle\FlameParticle;
- use pocketmine\math\Vector3;
- use onebone\economyapi\EconomyAPI;
  use pocketmine\level\Position;
 
 
@@ -29,7 +21,7 @@
        $this->getServer()->getPluginManager()->registerEvents($this, $this);
        $this->saveResource("core.yml");
        $this->config = new Config($this->getDataFolder() . "core.yml", Config::YAML);
-   } 
+   }
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
        if ($cmd->getName() == "payall") {
@@ -44,7 +36,7 @@
                $sender->sendMessage("§eCore §4Du hast keine Rechte um diesen befehl zu benutzen");
            }
        }
-       
+
        if ($cmd->getName() == "tpall") {
         if ($sender instanceof Player) {
             if ($sender->hasPermission("tpall.core")) {
@@ -55,8 +47,8 @@
              $level = $sender->getLevel();
              $name = $sender->getName();
              $player->teleport(new Position($x, $y, $z, $level));
-         
-             } 
+
+             }
              $sender->sendMessage("§eCore §4Du hast alle zu dir Teleportiert!");
              $this->getServer()->broadcastMessage("§7(§c!§7) §4§e$name §4hat jeden zu ihn Teleportiert!");
             } else {
@@ -67,7 +59,7 @@
      }
      return true;
     }
-	   
+
     if(strtolower($cmd->getName()) == "fly") {
             if($sender instanceof Player) {
                 if($this->isPlayer($sender)) {
@@ -158,7 +150,7 @@
             }
               break;
 
-              
+
             case "c":
             if(isset($args[1])){
                 $target = $this->getServer()->getPlayer($args[1]);
@@ -181,7 +173,7 @@
                 $this->getLogger()->warning("§4 $player hat sein Spielmodus auf §eGamemode 1 §4gesetzt!");
                 return true;
             }
-           
+
               break;
 
               case "spec":
@@ -206,7 +198,7 @@
                 return true;
             }
               return true;
-           
+
               break;
 
               case "a":
@@ -232,7 +224,7 @@
                 return true;
             }
               return true;
-           
+
               break;
 
             }
@@ -243,7 +235,7 @@
             $sender->sendMessage("§eCore §4Du kannst diesen Command nur InGame ausführen");
     }
  }
- 
+
    }
-	 
+
  }
