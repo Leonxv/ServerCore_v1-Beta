@@ -16,7 +16,7 @@ class Main extends PluginBase {
     public $config;
 
     public function onEnable() {
-        $this->getLogger()->info(TF::GREEN . "Das core plugin wurde erfolgreich geladen!");
+        $this->getLogger()->info(TF::GREEN . "Das core plugin wurde erfolgreich geladen\nby Aleondev!");
         $this->saveResource("core.yml");
         $this->config = new Config($this->getDataFolder() . "core.yml", Config::YAML);
     }
