@@ -95,8 +95,7 @@
                  $y = $sender->getY();
                  $z = $sender->getZ();
                  $level = $sender->getLevel();
-                 $tpnam = $player;
-                 $tpname = $tpna->getName();
+                 $tpname = $player->getName();
                  $player8 = $sender->getName();
                  $player->teleport(new Position($x, $y, $z, $level));
                  $sender->sendMessage("§eCore §4Du hast $tpname zu dir Teleportiert!");
