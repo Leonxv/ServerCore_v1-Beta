@@ -130,13 +130,13 @@
  if ($cmd->getName() == "flyon") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("flyon.core")) {
-	    $sender->setAlowFlight(true);
+	    $sender->setAllowFlight(true);
 	    $sender->sendMessage($this->getConfig()->get("flyon"));
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->setAlowFlight(true);
+	    $sender->setAllowFlight(true);
 	    $sender->sendMessage($this->getConfig()->get("flyon"));
     }
     return true;
@@ -145,13 +145,13 @@
  if ($cmd->getName() == "flyoff") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("flyoff.core")) {
-	    $sender->setAlowFlight(false);
+	    $sender->setAllowFlight(false);
 	    $sender->sendMessage($this->getConfig()->get("flyoff"));
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->setAlowFlight(false);
+	    $sender->setAllowFlight(false);
 	    $sender->sendMessage($this->getConfig()->get("flyoff"));
     }
     return true;
