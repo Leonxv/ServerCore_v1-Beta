@@ -105,10 +105,12 @@
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
+    }else{
+	    $sender->sendMessage("in game");
     }
     return true;
  }
-	   
+	    	   
  if ($cmd->getName() == "nacht") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("nacht.core")) {
@@ -117,6 +119,8 @@
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
+    }else{
+	    $sender->sendMessage("in game");
     }
     return true;
  }
@@ -129,6 +133,8 @@
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
+    }else{
+	    $sender->sendMessage("in game");
     }
     return true;
  }
@@ -141,6 +147,8 @@
 	}else{
             $sender->sendMessage("§cKeine Rechte");
 	}
+    }else{
+	    $sender->sendMessage("in game");
     }
     return true;
  }
