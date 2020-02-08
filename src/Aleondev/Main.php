@@ -7,6 +7,7 @@
  use pocketmine\plugin\Plugin;
  use pocketmine\command\Command;
  use pocketmine\command\CommandSender;
+ use pocketmine\command\CommandExecutor; 
  use pocketmine\command\ConsoleCommandSender; 
  use pocketmine\Player;
  use pocketmine\Server;
@@ -24,8 +25,7 @@
 
     public $config;
 
-   public function onEnable() {
-       $this->getServer()->getPluginManager()->registerEvents($this, $this);
+   public function onEnable(){
        $this->saveResource("config.yml");
        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
    } 
