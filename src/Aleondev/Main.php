@@ -33,13 +33,11 @@
    }
 	 
 	 public function onJoin(PlayerJoinEvent $event){
-		 $event->setJoinMessage($this->getConfig()->get("join"));
-		 $this->getServer()->broadcastMessage($this->getConfig()->get("join"));
+		 $event->setJoinMessage("§a[+]");
 	 }
 	 
 	 public function onQuit(PlayerQuitEvent $event){
-		 $event->setQuitMessage($this->getConfig()->get("quit"));
-		 $this->getServer()->broadcastMessage($this->getConfig()->get("quit"));
+		 $event->setQuitMessage("§c[-]");
 	 }
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
@@ -56,7 +54,7 @@
          
              } 
              $sender->sendMessage("§eCore §4Du hast alle zu dir Teleportiert!");
-             $this->getServer()->broadcastMessage("§7(§c!§7) §4§e$name §4hat jeden zu ihn Teleportiert!");
+             $this->getServer()->broadcastMessage($this->getConfig()->get("tpall"));
             } else {
              $sender->sendMessage("§eCore §4Für diesen Command hast du keine Rechte!");
          }
@@ -160,7 +158,7 @@
     if ($sender instanceof Player) {
         if ($sender->hasPermission("gm.core")) {
             if(!isset($args[0]) || count($args) < 1) {
-                $sender->sendMessage("§eCore: §4/gm < gm0 | gm1 | gm3 | gm2 >");
+                $sender->sendMessage($this->getConfig()->get("gm"));
                 return true;
             }
             switch(strtolower($args[0])) {
