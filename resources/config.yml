@@ -1,2 +1,20 @@
-#Config
+#Config by Aleondev
 # "§"
+# "\n"
+# hir kannst du die message ändern.
+
+# GM1.
+
+gm1: "§eCore§b>>Gm1"
+
+#GM0.
+
+gm0: "§eCore§b>>Gm0"
+
+#GM3.
+
+gm3: "§eCore§b>>Gm3"
+
+#GM2
+
+gm2: "§eCore§b>>Gm2"
