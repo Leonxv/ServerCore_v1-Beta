@@ -79,7 +79,7 @@
                  $tpname = $tpna->getName();
                  $player8 = $sender->getName();
                  $player->teleport(new Position($x, $y, $z, $level));
-                 $sender->sendMessage("§eCore §4Du hast $tpname zu dir Teleportiert!");
+                 $sender->sendMessage("§eCore §4Du hast $player zu dir Teleportiert!");
                  $player->sendMessage("§eCore §4 Du wurdest zur $player8 Teleportiert!");
                  return true;
              } else {
