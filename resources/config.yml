@@ -1,9 +1,7 @@
 #Config by Aleondev
 # "§"
 # "\n"
-# der name des players machst du so.
-# "§eCore§b>> $name hat sich in gm1 gesetzt".
-# hir kannst du die message ändern.
+# Hir kannst du die message ändern.
 
 # GM1.
 
@@ -20,3 +18,11 @@ gm3: "§eCore§b>>Gm3"
 #GM2
 
 gm2: "§eCore§b>>Gm2"
+
+#Join Message.
+
+join: "§a[+]"
+
+#Quit Message.
+
+quit: "§c[-]"
