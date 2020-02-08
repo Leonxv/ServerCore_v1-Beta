@@ -26,3 +26,19 @@ join: "§a[+]"
 #Quit Message.
 
 quit: "§c[-]"
+
+#Tag.
+
+tag: "§eCore§b>>Tag"
+
+#Nacht.
+
+nacht: "§eCore§b>>Nacht"
+
+#Flyon.
+
+flyon: "§eCore§b>>Flyon"
+
+#Flyoff.
+
+flyoff: "§eCore§b>>Flyoff
