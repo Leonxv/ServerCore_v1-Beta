@@ -25,7 +25,6 @@
     public $config;
 
    public function onEnable() {
-       $this->getLogger->info("Das core plugin wurde erfolgreich geladen!");
        $this->getServer()->getPluginManager()->registerEvents($this, $this);
        $this->saveResource("config.yml");
        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
