@@ -34,10 +34,12 @@
 	 
 	 public function onJoin(PlayerJoinEvent $event){
 		 $event->setJoinMessage($this->getConfig()->get("join"));
+		 $this->getServer()->broadcastMessage($this->getConfig()->get("join"));
 	 }
 	 
 	 public function onQuit(PlayerQuitEvent $event){
 		 $event->setQuitMessage($this->getConfig()->get("quit"));
+		 $this->getServer()->broadcastMessage($this->getConfig()->get("quit"));
 	 }
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
@@ -94,10 +96,55 @@
      }
      return true;
  }
-
+ 
+ if ($cmd->getName() == "tag") {
+    if ($sender instanceof Payer) {
+	if ($sender->hasPermission("tag.core")) {
+	    $sender->getLevel()->setTime(6000);
+	    $sender->sendMessage($this->getConfig()->get("tag"));
+	}else{
+            $sender->sendMessage("§cKeine Rechte");
+	}
+    }
+    return true;
+ }
+ if ($cmd->getName() == "nacht") {
+    if ($sender instanceof Payer) {
+	if ($sender->hasPermission("nacht.core")) {
+	    $sender->getLevel()->setTime(16000);
+	    $sender->sendMessage($this->getConfig()->get("nacht"));
+	}else{
+            $sender->sendMessage("§cKeine Rechte");
+	}
+    }
+    return true;
+ }
+ if ($cmd->getName() == "flyon") {
+    if ($sender instanceof Payer) {
+	if ($sender->hasPermission("flyon.core")) {
+	    $sender->setAowFlight(true);
+	    $sender->sendMessage($this->getConfig()->get("flyon"));
+	}else{
+            $sender->sendMessage("§cKeine Rechte");
+	}
+    }
+    return true;
+ }
+ if ($cmd->getName() == "flyoff") {
+    if ($sender instanceof Payer) {
+	if ($sender->hasPermission("flyoff.core")) {
+	    $sender->setAowFlight(true);
+	    $sender->sendMessage($this->getConfig()->get("flyoff"));
+	}else{
+            $sender->sendMessage("§cKeine Rechte");
+	}
+    }
+    return true;
+ }
+	   
  if ($cmd->getName() == "gm") {
     if ($sender instanceof Player) {
-        if ($sender->hasPermission("g.core")) {
+        if ($sender->hasPermission("gm.core")) {
             if(!isset($args[0]) || count($args) < 1) {
                 $sender->sendMessage("§eCore: §4/gm < gm0 | gm1 | gm3 | gm2 >");
                 return true;
