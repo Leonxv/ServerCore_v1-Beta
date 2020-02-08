@@ -16,6 +16,8 @@
  use DateTime;
  use pocketmine\level\particle\FlameParticle;
  use pocketmine\math\Vector3;
+ use pocketmine\event\player\PayerJoinEvent;
+ use pocketmine\event\player\PlayerQuitEvent;
  use onebone\economyapi\EconomyAPI;
  use pocketmine\level\Position;
 
@@ -28,7 +30,15 @@
    public function onEnable(){
        $this->saveResource("config.yml");
        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-   } 
+   }
+	 
+	 public function onJoin(PlayerJoinEvent $event){
+		 $event->setJoinMessage($this->getConfig()->get("join"));
+	 }
+	 
+	 public function onQuit(PlayerQuitEvent $event){
+		 $event->setQuitMessage($this->getConfig()->get("quit"));
+	 }
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
        if ($cmd->getName() == "tpall") {
