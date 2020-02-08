@@ -102,8 +102,7 @@
                     $tgname = $targetgm->getName();
                     $player = $sender->getName();
                     $target->setGamemode(0);
-                    $sender->sendMessage("§eCore Du hast §e$tgname  §4Spielmodus auf §eGamemode 0 §4gesetzt! ");
-                    $target->sendMessage("§eCore §e$player §4hat dein Spielmodus auf §eGamemode 0 §4gesetzt!");
+                    $sender->sendMessage($this->getConfig()->get("gm0"));
                     $this->getLogger()->warning("§4 $player hat $tgname sein Spielmodus auf §eGamemode 0 §4gesetzt!");
                     return true;
                 } else {
@@ -112,7 +111,7 @@
             } else {
                 $player = $sender->getName();
                 $sender->setGamemode(0);
-                $sender->sendMessage("§eCore §4Du hast dein Spielmodus auf §eGamemode 0 §4gesetzt!");
+                $sender->sendMessage($this->getConfig()->get("gm0"));
                 $this->getLogger()->warning("§4 $player hat sein Spielmodus auf §eGamemode 0 §4gesetzt!");
                 return true;
             }
@@ -127,8 +126,7 @@
                     $player = $sender->getName();
                     $tname = $targetgm->getName();
                     $target->setGamemode(1);
-                    $sender->sendMessage("§eCore §4Du hast §e$tname  §4Spielmodus auf §eGamemode 1 §4gesetzt! ");
-                    $target->sendMessage("§eCore §e$player §7hat dein Spielmodus auf §eGamemode 1 §4gesetzt!");
+                    $sender->sendMessage($this->getConfig()->get("gm1"));
                     $this->getLogger()->warning("§4 $player hat $tname sein Spielmodus auf §eGamemode 1 §4gesetzt!");
                     return true;
                 } else {
@@ -137,7 +135,7 @@
             } else {
                 $player = $sender->getName();
                 $sender->setGamemode(1);
-                $sender->sendMessage("§eCore §4Du hast dein Spielmodus auf §eGamemode 1 §4gesetzt!");
+                $sender->sendMessage($this->getConfig()->get("gm1"));
                 $this->getLogger()->warning("§4 $player hat sein Spielmodus auf §eGamemode 1 §4gesetzt!");
                 return true;
             }
@@ -149,10 +147,10 @@
                 $target = $this->getServer()->getPlayer($args[1]);
                 if($target instanceof Player){
                     $targetgm = $target;
-                    $player = $sender->getName();                    $tname = $targetgm->getName();
+                    $player = $sender->getName();                    
+		    $tname = $targetgm->getName();
                     $target->setGamemode(3);
-                    $sender->sendMessage("§eCore §4Du hast §e$tname  §4Spielmodus auf §eGamemode 3 §4gesetzt! ");
-                    $target->sendMessage("§e$player §4hat dein Spielmodus auf §eGamemode 3 §4gesetzt!");
+                    $sender->sendMessage($this->getConfig()->get("gm3"));
                     $this->getLogger()->warning("§4 $player hat $tname sein Spielmodus auf §eGamemode 3 §4gesetzt!");
                     return true;
                 } else {
@@ -161,7 +159,7 @@
             } else {
                 $player = $sender->getName();
                 $sender->setGamemode(3);
-                $sender->sendMessage("§eCore §4Du hast dein Spielmodus auf §eGamemode 3 §4gesetzt!");
+                $sender->sendMessage($this->getConfig()->get("gm3"));
                 $this->getLogger()->warning("§4 $player hat sein Spielmodus auf §eGamemode 3 §4gesetzt!");
                 return true;
             }
@@ -177,8 +175,7 @@
                     $tname = $targetgm->getName();
                     $player = $sender->getName();
                     $target->setGamemode(2);
-                    $sender->sendMessage("§eCore §4 Du hast §e$tname  §4Spielmodus auf §eGamemode 2 §4gesetzt! ");
-                    $target->sendMessage("§eCore §e$player §4hat dein Spielmodus auf §eGamemode 2 §4gesetzt!");
+                    $sender->sendMessage($this->getConfig()->get("gm2"));
                     $this->getLogger()->warning("§4 $player hat $tname sein Spielmodus auf §eGamemode 2 §4gesetzt!");
                     return true;
                 } else {
@@ -187,7 +184,7 @@
             } else {
                 $player = $sender->getName();
                 $sender->setGamemode(2);
-                $sender->sendMessage("§eCore §4 Du hast dein Spielmodus auf §eGamemode 2 §4gesetzt!");
+                $sender->sendMessage($this->getConfig()->get("gm2"));
                 $this->getLogger()->warning("§4 $player hat sein Spielmodus auf §eGamemode 2 §4gesetzt!");
                 return true;
             }
