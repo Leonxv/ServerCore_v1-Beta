@@ -18,3 +18,15 @@ commands:
   gm:
     description: §e[Core]§bGM
     permission: gm.core
+  tag:
+    description: §e[Core]§bTag
+    permission: tag.core
+  nacht:
+    description: §e[Core]§bNacht
+    permission: nacht.core
+  flyon:
+    description: §e[Core]§bFlyon
+    permission: flyon.core
+  flyoff:
+    description: §e[Core]§bFlyoff
+    permission: flyoff.core
