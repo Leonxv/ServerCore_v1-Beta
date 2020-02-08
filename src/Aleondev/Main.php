@@ -27,8 +27,8 @@
    public function onEnable() {
        $this->getLogger->info("Das core plugin wurde erfolgreich geladen!");
        $this->getServer()->getPluginManager()->registerEvents($this, $this);
-       $this->saveResource("core.yml");
-       $this->config = new Config($this->getDataFolder() . "core.yml", Config::YAML);
+       $this->saveResource("config.yml");
+       $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
    } 
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool {
