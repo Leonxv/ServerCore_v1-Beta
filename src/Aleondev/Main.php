@@ -106,7 +106,8 @@
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->sendMessage("in game");
+	    $sender->getLevel()->setTime(6000);
+	    $sender->sendMessage($this->getConfig()->get("tag"));
     }
     return true;
  }
@@ -120,7 +121,8 @@
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->sendMessage("in game");
+	    $sender->getLevel()->setTime(16000);
+	    $sender->sendMessage($this->getConfig()->get("nacht"));
     }
     return true;
  }
@@ -134,7 +136,8 @@
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->sendMessage("in game");
+	    $sender->setAlowFlight(true);
+	    $sender->sendMessage($this->getConfig()->get("flyon"));
     }
     return true;
  }
@@ -148,7 +151,8 @@
             $sender->sendMessage("§cKeine Rechte");
 	}
     }else{
-	    $sender->sendMessage("in game");
+	    $sender->setAlowFlight(false);
+	    $sender->sendMessage($this->getConfig()->get("flyoff"));
     }
     return true;
  }
