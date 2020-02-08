@@ -108,6 +108,7 @@
     }
     return true;
  }
+	   
  if ($cmd->getName() == "nacht") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("nacht.core")) {
@@ -119,10 +120,11 @@
     }
     return true;
  }
+	   
  if ($cmd->getName() == "flyon") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("flyon.core")) {
-	    $sender->setAowFlight(true);
+	    $sender->setAlowFlight(true);
 	    $sender->sendMessage($this->getConfig()->get("flyon"));
 	}else{
             $sender->sendMessage("§cKeine Rechte");
@@ -130,10 +132,11 @@
     }
     return true;
  }
+	   
  if ($cmd->getName() == "flyoff") {
     if ($sender instanceof Payer) {
 	if ($sender->hasPermission("flyoff.core")) {
-	    $sender->setAowFlight(true);
+	    $sender->setAlowFlight(false);
 	    $sender->sendMessage($this->getConfig()->get("flyoff"));
 	}else{
             $sender->sendMessage("§cKeine Rechte");
