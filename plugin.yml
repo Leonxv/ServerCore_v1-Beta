@@ -6,15 +6,15 @@ api:
 - 4.0.0
 load: POSTWORLD
 author: Aleondev
-description: "Core by Aleondev"
+description: "ServerCore by Aleondev"
 
 commands:
   tpall:
-    description: §e[Core]§4tpall
+    description: §e[Core]§btpall
     permission: tpall.core
   tpohere:
-    description: §e[Core]§4Tpohere
+    description: §e[Core]§bTpohere
     permission: tpohere.core
   gm:
-    description: §e[Core]§4G
+    description: §e[Core]§bGM
     permission: gm.core
