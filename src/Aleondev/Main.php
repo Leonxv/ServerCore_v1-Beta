@@ -45,15 +45,9 @@
         if ($sender instanceof Player) {
             if ($sender->hasPermission("tpall.core")) {
              foreach ($this->getServer()->getOnlinePlayers() as $player) {
-             $x = $sender->getX();
-             $y = $sender->getY();
-             $z = $sender->getZ();
-             $level = $sender->getLevel();
-             $name = $sender->getName();
-             $player->teleport(new Position($x, $y, $z, $level));
+             $player->teleport($sender);
          
              } 
-             $sender->sendMessage("§eCore §4Du hast alle zu dir Teleportiert!");
              $this->getServer()->broadcastMessage($this->getConfig()->get("tpall"));
             } else {
              $sender->sendMessage("§eCore §4Für diesen Command hast du keine Rechte!");
